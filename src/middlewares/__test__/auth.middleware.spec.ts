@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { verifyJwt } from '../../utils/jwt.utils';
 import { User } from '../../models/user.model';
-import authorizeUser from '../../middlewares/auth.middleware'; // Update this path
+import authorizeUser from '../../middlewares/auth.middleware';
 
 jest.mock('../../utils/jwt.utils');
 jest.mock('../../models/user.model');

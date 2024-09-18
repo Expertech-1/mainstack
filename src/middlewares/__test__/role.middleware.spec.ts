@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { Role } from '../../utils/roles.utils'; // Adjust the path as necessary
-import requiresRole from '../../middlewares/role.middleware'; // Update this path
+import { Role } from '../../utils/roles.utils'; 
+import requiresRole from '../../middlewares/role.middleware'; 
 
 describe('requiresRole Middleware', () => {
   let mockRequest: Partial<Request>;

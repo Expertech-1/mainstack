@@ -12,9 +12,6 @@ class AuthController {
       const user = await AuthService.register(body);
       res.status(201).json(user);
     } catch (err: any) {
-      // if (err instanceof z.ZodError) {
-      //   return res.status(400).json({ message: err.errors });
-      // }
       return res.status(400).json({ message: err.message });
     }
   }

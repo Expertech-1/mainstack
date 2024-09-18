@@ -169,4 +169,3 @@ Request → Route → Controller → Service → Model → Database
 5. Open a Pull Request
 
 
-# mainstack

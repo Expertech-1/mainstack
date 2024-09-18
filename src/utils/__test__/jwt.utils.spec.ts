@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { signJwt, verifyJwt } from '../../utils/jwt.utils'; 
 
-// Mock the dotenv config and process.env
 jest.mock('dotenv', () => ({
   config: jest.fn(),
 }));

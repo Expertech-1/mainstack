@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mainstack
+      MONGO_INITDB_ROOT_PASSWORD: mainstack123
+
+  api:
+    build: .
+    container_name: mainstack
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://mainstack:mainstack123@mongodb:27017/mainstack?authSource=admin
+      PORT: 5000
+    depends_on:
+      - mongodb 
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+volumes:
+  mongo-data:

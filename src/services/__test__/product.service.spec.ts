@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import ProductService from '../../services/product.service'; // Update this path
+import ProductService from '../../services/product.service'; 
 import { Product, IProduct, ProductDocument } from '../../models/product.model';
 
 describe('ProductService', () => {

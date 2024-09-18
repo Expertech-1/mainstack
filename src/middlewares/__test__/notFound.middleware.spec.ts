@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import __404_err_page from '../../middlewares/notFound.middleware'; // Update this path
+import __404_err_page from '../../middlewares/notFound.middleware'; 
 
 describe('404 Error Page Middleware', () => {
   let mockRequest: Partial<Request>;

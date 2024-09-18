@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { Product, IProduct } from '../../models/product.model'; // Update this path
+import { Product, IProduct } from '../../models/product.model'; 
 
 describe('Product Model Test', () => {
   let mongoServer: MongoMemoryServer;
@@ -25,7 +25,6 @@ describe('Product Model Test', () => {
     });
     const savedProduct = await validProduct.save();
     
-    // Object Id should be defined when successfully saved to MongoDB.
     expect(savedProduct._id).toBeDefined();
     expect(savedProduct.name).toBe(validProduct.name);
     expect(savedProduct.description).toBe(validProduct.description);
@@ -34,7 +33,6 @@ describe('Product Model Test', () => {
     expect(savedProduct.createdAt).toBeDefined();
   });
 
-  // You might also test validations to ensure incorrect data isn't accepted
   it('insert product successfully, but the field does not defined in schema should be undefined', async () => {
     const productWithInvalidField = new Product({
       name: 'Test Product',

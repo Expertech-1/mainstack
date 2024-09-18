@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import AuthController from '../../controllers/auth.controller';
 import AuthService from '../../services/auth.service';
 import { setCookie, clearCookie } from '../../utils/cookie.utils';
-import { ZodError } from 'zod';
 
 jest.mock('../../services/auth.service');
 jest.mock('../../utils/cookie.utils');
@@ -42,7 +41,6 @@ describe('AuthController', () => {
 
     it('should handle validation errors', async () => {
       mockRequest.body = { email: 'invalid-email' };
-      // const zodError = new ZodError([{ code: 'invalid_string', message: 'Invalid email', path: ['email'] }]);
 
       await AuthController.register(mockRequest as Request, mockResponse as Response);
 
